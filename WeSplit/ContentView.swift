@@ -62,6 +62,7 @@ struct ContentView: View {
                 
                 Section("Total amount per check") {
                     Text(totalPerCheck, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .foregroundStyle(tipPercentage <= 0 ? .red : .black)
                 }
                 
                 Section("Amount per person") {
