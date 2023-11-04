@@ -15,7 +15,7 @@ struct ContentView: View {
     
     let tipPercentages = [10, 15, 20, 25, 0]
     
-    var totalPerPerson: Double {
+    private var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
         let tipSelection = Double(tipPercentage)
         
@@ -26,7 +26,7 @@ struct ContentView: View {
         return amountPerPerson
     }
     
-    var totalPerCheck: Double {
+    private var totalPerCheck: Double {
         let tipValue = checkAmount / 100 * Double(tipPercentage)
         let grandTotal = checkAmount + tipValue
         
@@ -53,9 +53,6 @@ struct ContentView: View {
                         ForEach(0..<101) {
                             Text("\($0) %")
                         }
-//                        ForEach(tipPercentages, id: \.self) {
-//                            Text($0, format: .percent)
-//                        }
                     }
                     .pickerStyle(.navigationLink)
                 }
